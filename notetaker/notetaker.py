@@ -21,8 +21,11 @@ def  main_wrapper(filename,vim=False,read_mode=False):
       elif read_mode:
           call(['more',pair[0]])
       else:
+        outfile = open(pair[0],'a')
         note = raw_input("\n vvv enter note for %s:\n" % pair[0])
-        print "note: %s" % note
+        outfile.write(note+"\n")
+        outfile.close()
+        print "\nwritten\n"
       
 
 
