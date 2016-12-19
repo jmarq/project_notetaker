@@ -9,7 +9,7 @@ def map_lines(line):
 
 def parseConfigFile(config_filename):
     """ returns a list of file_path/project description pairs, based on what is found in the config_filename file """
-    fi = open(config_filename)
+    fi = open(config_filename,'r')
     lines = fi.read().strip().split("\n")
     lines = filter(lambda(d):d and d[0]!="#",lines)
     results = map(map_lines, lines)

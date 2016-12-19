@@ -1,3 +1,6 @@
 TODO.txt
 */*.pyc
+*/*.swp
+*.swp
 *.pyc
+mynotes.conf
