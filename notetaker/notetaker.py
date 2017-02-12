@@ -9,18 +9,21 @@ def  main_wrapper(filename,vim=False,read_mode=False):
 
   # the below code is sloppy and must be refactored in the near future
   # this is the main user interaction area, care must be taken with error handling ;)
+  
+  # display the projects available to choose 
   for i in range(len(pairs)):
       prompt_text+=str(i)+") "+pairs[i][1]+"\n"
   selection = input(prompt_text)
   if int(selection)not in range(len(pairs)):
-      print ("naw")
+      print ("not a valid choice")
   else:
+      # they chose a project, either open it in vim, show the contents, or allow appending from command prompt
       pair = pairs[int(selection)]
-      if vim:
+      if vim:# set in __main__ below
           call(["vim",pair[0]])
-      elif read_mode:
+      elif read_mode:# set in __main__ below
           call(['more',pair[0]])
-      else:
+      else:# append a line entered in the command prompt
         outfile = open(pair[0],'a')
         note = raw_input("\n vvv enter note for %s:\n" % pair[0])
         outfile.write(note+"\n")
