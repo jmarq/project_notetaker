@@ -3,7 +3,7 @@
 
 ### Functionality
 - command line utility
-- use conf file to choose project containing folders
+- use conf file to choose project containing folders (currently the script looks for "mynotes.conf" in the root directory of this project)
 - utility lists projects in those folders
 - user can choose a project and quickly add to its TODO.txt
 - optional flag to jump into TODO with vim.
