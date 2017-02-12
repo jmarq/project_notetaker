@@ -3,7 +3,9 @@ from subprocess import call
 import sys
 
 def  main_wrapper(filename,vim=False,read_mode=False):
+  # set pairs to be a list of project name/todo file pairings
   pairs = process_config.parseConfigFile(filename)
+  
   prompt_text = ""
   prompt_text += "Choose a Project:\n"
 
